@@ -1,0 +1,241 @@
+/* Reset & Base */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Poppins', sans-serif; line-height: 1.6; background: #f9f9f9; color: #333; }
+
+/* Navbar */
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: #2c3e50; color: white; position: sticky; top: 0; z-index: 100; }
+.nav-links { display: flex; list-style: none; }
+.nav-links li a { color: white; text-decoration: none; margin-left: 1.5rem; transition: color 0.3s ease; }
+.nav-links li a:hover { color: #e67e22; }
+.hamburger { display: none; flex-direction: column; cursor: pointer; }
+.hamburger span { height: 3px; width: 25px; background: white; margin: 4px 0; transition: 0.3s; }
+
+/* Hero */
+.hero { display: flex; flex-direction: column-reverse; align-items: center; justify-content: center; background: linear-gradient(to right, #2980b9, #6dd5fa); color: white; padding: 6rem 2rem; position: relative; }
+.hero h1 { font-size: 2.8rem; margin-bottom: 1rem; }
+.hero p { font-size: 1.2rem; margin-bottom: 2rem; text-align: center; }
+.hero-image img { max-width: 400px; width: 100%; margin-top: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+.cta-btn { background: #e67e22; color: white; padding: 0.75rem 2rem; text-decoration: none; border-radius: 5px; transition: background 0.3s ease; }
+.cta-btn:hover { background: #d35400; }
+
+/* Sections */
+section { padding: 4rem 2rem; text-align: center; }
+#about { background: #ecf0f1; }
+.feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 2rem; margin-top: 2rem; }
+.feature-card { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.feature-card:hover { transform: translateY(-5px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+.feature-card img { width: 60px; margin-bottom: 1rem; }
+.feature-card h3 { margin-bottom: 0.5rem; color: #2980b9; }
+.feature-card p { font-size: 0.95rem; color: #555; }
+
+/* Pricing */
+.pricing-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 2rem; margin-top: 2rem; }
+.card { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+.card.popular { border: 2px solid #e67e22; transform: scale(1.05); }
+.card.popular a.cta-btn { background: #e67e22; }
+.card.popular a.cta-btn:hover { background: #d35400; }
+
+/* Contact */
+#contact form { display: flex; flex-direction: column; gap: 1rem; max-width: 400px; margin: auto; }
+#contact input, #contact textarea { padding: 0.75rem; border-radius: 5px; border: 1px solid #ccc; width: 100%; }
+#contact button { padding: 0.75rem; border: none; border-radius: 5px; background: #2980b9; color: white; cursor: pointer; transition: background 0.3s ease; }
+#contact button:hover { background: #1c5980; }
+
+/* Footer */
+footer { text-align: center; padding: 2rem; background: #2c3e50; color: white; margin-top: 2rem; }
+footer .social-icons { margin-top: 1rem; display: flex; justify-content: center; gap: 1rem; }
+footer .social-icons img { width: 30px; transition: transform 0.3s ease; }
+footer .social-icons img:hover { transform: scale(1.2); }
+
+/* Fade-in */
+.fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.fade-in.show { opacity: 1; transform: translateY(0); }
+
+/* Back to Top */
+#backToTop { position: fixed; bottom: 40px; right: 40px; display: none; background: #e67e22; color: white; border: none; padding: 0.75rem 1rem; border-radius: 50%; font-size: 1.5rem; cursor: pointer; box-shadow: 0 4px 8px rgba(0,0,0,0.2); transition: background 0.3s ease, transform 0.3s ease; z-index: 1000; }
+#backToTop:hover { background: #d35400; transform: translateY(-3px); }
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .nav-links { display: none; flex-direction: column; width: 100%; background: #34495e; position: absolute; top: 60px; left: 0; }
+  .nav-links.open { display: flex; }
+  .nav-links li { margin: 1rem 0; }
+  .hamburger { display: flex; }
+  .hero h1 { font-size: 2rem; }
+  .hero p { font-size: 1rem; }
+}
+@media screen and (min-width: 992px) {
+  .hero { flex-direction: row; justify-content: space-around; text-align: left; }
+  .hero-content { max-width: 50%; }
+  .hero-image { max-width: 45%; }
+}
+
+
+/* Auth Pages */
+.auth-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to right, #2980b9, #6dd5fa);
+  padding: 2rem;
+}
+
+.auth-container {
+  background: white;
+  padding: 3rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.auth-container h2 {
+  margin-bottom: 2rem;
+  color: #2980b9;
+}
+
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.auth-container input {
+  padding: 0.75rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.auth-container button.cta-btn {
+  background: #e67e22;
+  color: white;
+  padding: 0.75rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.auth-container button.cta-btn:hover {
+  background: #d35400;
+}
+
+.auth-container p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.auth-container p a {
+  color: #2980b9;
+  text-decoration: none;
+}
+
+.auth-container p a:hover {
+  text-decoration: underline;
+}
+
+/* Fade-in animation inherited */
+
+/* General Page Section */
+.page-section {
+  padding: 6rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.section-container {
+  max-width: 900px;
+  width: 100%;
+}
+
+.page-section h1 {
+  font-size: 2.5rem;
+  color: #2980b9;
+  margin-bottom: 2rem;
+}
+
+.page-section p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+/* Inherit feature grid, pricing cards, and buttons from main CSS */
+
+/* Dashboard Layout */
+body { display: flex; min-height: 100vh; font-family: 'Poppins', sans-serif; }
+.sidebar {
+  width: 250px;
+  background: #2c3e50;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  position: fixed;
+  height: 100%;
+}
+.sidebar-logo { font-size: 1.8rem; font-weight: bold; margin-bottom: 2rem; text-align: center; }
+.sidebar-menu { list-style: none; flex-grow: 1; }
+.sidebar-menu li { margin-bottom: 1rem; }
+.sidebar-menu li a { color: white; text-decoration: none; display: block; padding: 0.5rem 1rem; border-radius: 5px; transition: background 0.3s ease; }
+.sidebar-menu li a:hover { background: #e67e22; }
+
+/* Main Content */
+.main-content { margin-left: 250px; padding: 2rem; width: 100%; }
+
+/* Dashboard Header */
+.dashboard-header h1 { font-size: 2rem; margin-bottom: 2rem; color: #2980b9; }
+
+/* Cards */
+.cards-container { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1rem; }
+.dashboard-card { background: white; padding: 1.5rem; border-radius: 10px; flex: 1; min-width: 200px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center; }
+.dashboard-card h3 { margin-bottom: 1rem; color: #2980b9; }
+.dashboard-card p { font-size: 1.2rem; font-weight: bold; }
+
+/* Tables */
+.dashboard-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+.dashboard-table th, .dashboard-table td { padding: 0.75rem; border: 1px solid #ccc; text-align: left; }
+.dashboard-table th { background: #2980b9; color: white; }
+.cta-btn.small { padding: 0.3rem 0.8rem; font-size: 0.85rem; }
+
+/* Responsive */
+@media screen and (max-width: 992px) {
+  .sidebar { width: 200px; padding: 1rem; }
+  .main-content { margin-left: 200px; padding: 1rem; }
+  .cards-container { flex-direction: column; }
+  .dashboard-card { min-width: 100%; }
+}
+@media screen and (max-width: 600px) {
+  body { flex-direction: column; }
+  .sidebar { position: relative; width: 100%; height: auto; flex-direction: row; overflow-x: auto; }
+  .sidebar-menu { display: flex; flex-direction: row; gap: 0.5rem; }
+  .main-content { margin-left: 0; padding: 1rem; }
+}
+
+/* Reuse sidebar, main-content, dashboard-header, cards-container, dashboard-card, tables */
+
+/* Optional distinct color for School Admin */
+.dashboard-header h1 { color: #16a085; }
+.cards-container .dashboard-card { background: #f1f8f9; }
+.dashboard-table th { background: #16a085; color: white; }
+
+/* Responsive tweaks are the same as Super Admin */
+
+/* Teacher Dashboard specific color */
+.dashboard-header h1 { color: #8e44ad; }
+.cards-container .dashboard-card { background: #f4e6f8; }
+.dashboard-table th { background: #8e44ad; color: white; }
+
+/* Responsive styles inherited from previous dashboards */
+
+/* Student Dashboard specific color */
+.dashboard-header h1 { color: #2980b9; }
+.cards-container .dashboard-card { background: #d6eaf8; }
+.dashboard-table th { background: #2980b9; color: white; }

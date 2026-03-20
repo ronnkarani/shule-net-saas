@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shule-Net | Student Dashboard</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">Shule-Net</div>
+    <ul class="sidebar-menu">
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#my-classes">My Classes</a></li>
+      <li><a href="#grades">Grades</a></li>
+      <li><a href="#attendance">Attendance</a></li>
+      <li><a href="#fees">Fees</a></li>
+      <li><a href="index.html">Logout</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <header class="dashboard-header">
+      <h1>Student Dashboard</h1>
+      <p>Welcome, [Student Name] – Access your school information</p>
+    </header>
+
+    <!-- Overview Cards -->
+    <section id="overview" class="dashboard-section fade-in">
+      <h2>Overview</h2>
+      <div class="cards-container">
+        <div class="dashboard-card">
+          <h3>Grade</h3>
+          <p>Grade 10</p>
+        </div>
+        <div class="dashboard-card">
+          <h3>Total Classes</h3>
+          <p>5</p>
+        </div>
+        <div class="dashboard-card">
+          <h3>Pending Fees</h3>
+          <p>$180</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- My Classes Section -->
+    <section id="my-classes" class="dashboard-section fade-in">
+      <h2>My Classes</h2>
+      <table class="dashboard-table">
+        <thead>
+          <tr>
+            <th>Class Name</th>
+            <th>Subject</th>
+            <th>Teacher</th>
+            <th>Schedule</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Class A</td>
+            <td>Mathematics</td>
+            <td>Anne Njeri</td>
+            <td>Mon, Wed, Fri</td>
+          </tr>
+          <tr>
+            <td>Class B</td>
+            <td>English</td>
+            <td>Peter Otieno</td>
+            <td>Tue, Thu</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Grades Section -->
+    <section id="grades" class="dashboard-section fade-in">
+      <h2>Grades</h2>
+      <table class="dashboard-table">
+        <thead>
+          <tr>
+            <th>Subject</th>
+            <th>Grade</th>
+            <th>Teacher</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Mathematics</td>
+            <td>B+</td>
+            <td>Anne Njeri</td>
+          </tr>
+          <tr>
+            <td>English</td>
+            <td>A</td>
+            <td>Peter Otieno</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Attendance Section -->
+    <section id="attendance" class="dashboard-section fade-in">
+      <h2>Attendance</h2>
+      <table class="dashboard-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Class</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>16-Mar-2026</td>
+            <td>Class A</td>
+            <td>Present</td>
+          </tr>
+          <tr>
+            <td>16-Mar-2026</td>
+            <td>Class B</td>
+            <td>Absent</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Fees Section -->
+    <section id="fees" class="dashboard-section fade-in">
+      <h2>Fees</h2>
+      <table class="dashboard-table">
+        <thead>
+          <tr>
+            <th>Fee Type</th>
+            <th>Amount</th>
+            <th>Status</th>
+            <th>Due Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Tuition</td>
+            <td>$100</td>
+            <td>Paid</td>
+            <td>01-Mar-2026</td>
+          </tr>
+          <tr>
+            <td>Books</td>
+            <td>$80</td>
+            <td>Pending</td>
+            <td>20-Mar-2026</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>
