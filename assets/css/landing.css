@@ -438,6 +438,66 @@ form button {
   background: #d35400;
 }
 
+/* PAGINATION */
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Buttons */
+.page-btn,
+.page-number {
+  border: none;
+  background: transparent;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+/* Numbers container */
+.page-numbers {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Hover */
+.page-number:hover,
+.page-btn:hover {
+  background: #ecf0f1;
+}
+
+/* Active page */
+.page-number.active {
+  background: #2980b9;
+  color: white;
+  font-weight: bold;
+}
+
+/* Disabled */
+.page-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Dots */
+.dots {
+  padding: 0 5px;
+  color: #999;
+}
 
 /* SCROLL BUTTON */
 #scrollTopBtn {

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQs - Shule-Net</title>
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+
+<link rel="stylesheet" href="../assets/css/landing.css">
+</head>
+<body>
+
+<div data-include="../partials/header.html"></div>
+
+<!-- HERO (same as index but dynamic content) -->
+<section class="hero"
+  data-title="Frequently Asked Questions"
+  data-subtitle="Everything you need to know about Shule-Net"
+  data-btn-text="Get Started"
+  data-btn-link="../auth/register.html">
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq">
+  <h2>General Questions</h2>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      <h3>What is Shule-Net?</h3>
+      <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        Shule-Net is a cloud-based school management system that helps schools manage students, teachers, fees, and academic performance in one platform.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      <h3>Who can use Shule-Net?</h3>
+      <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        Administrators, teachers, students, and even parents can interact with the system depending on assigned roles.
+      </p>
+    </div>
+  </div>
+
+  <h2>System Features</h2>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      <h3>Can I manage multiple schools?</h3>
+      <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        Yes, Shule-Net supports multi-school (multi-tenant) management from a single platform.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      <h3>Does it support fee tracking?</h3>
+      <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        Yes, you can track payments, generate invoices, and manage financial reports easily.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      <h3>Is it mobile friendly?</h3>
+      <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        Absolutely. Shule-Net is fully responsive and works across phones, tablets, and desktops.
+      </p>
+    </div>
+  </div>
+
+  <h2>Security & Access</h2>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      <h3>Is my data secure?</h3>
+      <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        Yes, we use secure authentication, encrypted storage, and regular backups to protect your data.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      <h3>Can students access their results?</h3>
+      <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        Yes, students have their own dashboard where they can view academic progress, results, and fee status.
+      </p>
+    </div>
+  </div>
+
+</section>
+<!-- PAGINATION -->
+<section class="pagination-container">
+  <div class="pagination">
+
+    <button class="page-btn prev" disabled>
+      <i class="fas fa-chevron-left"></i>
+    </button>
+
+    <div class="page-numbers">
+      <button class="page-number active">1</button>
+      <button class="page-number">2</button>
+      <button class="page-number">3</button>
+      <span class="dots">...</span>
+      <button class="page-number">10</button>
+    </div>
+
+    <button class="page-btn next">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<section class="cta-strip">
+  <h2>Still have questions?</h2>
+  <a href="contact.html" class="btn">Contact Us</a>
+</section>
+
+<!-- SCROLL TO TOP -->
+<button id="scrollTopBtn">↑</button>
+
+<div data-include="../partials/footer.html"></div>
+
+<script src="../assets/js/landing.js"></script>
+
+</body>
+</html>

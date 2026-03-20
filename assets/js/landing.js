@@ -90,6 +90,29 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 5000);
   }
 
+  if (hero) {
+    const title = hero.dataset.title;
+    const subtitle = hero.dataset.subtitle;
+    const btnText = hero.dataset.btnText;
+    const btnLink = hero.dataset.btnLink;
+
+    // Only inject if attributes exist
+    if (title) {
+      hero.innerHTML = `
+        <h1>${title}</h1>
+        <p>${subtitle || ""}</p>
+        ${
+          btnText
+            ? `<div class="hero-buttons">
+                <a href="${btnLink}" class="btn">${btnText}</a>
+              </div>`
+            : ""
+        }
+      `;
+    }
+  }
+
+
   // -----------------------------
   // SCROLL TO TOP
   // -----------------------------
@@ -138,3 +161,57 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+
+// -----------------------------
+// PAGINATION (Universal)
+// -----------------------------
+const pageNumbers = document.querySelectorAll(".page-number");
+const prevBtn = document.querySelector(".page-btn.prev");
+const nextBtn = document.querySelector(".page-btn.next");
+
+let currentPage = 1;
+const totalPages = pageNumbers.length;
+
+function updatePagination(page) {
+  currentPage = page;
+
+  pageNumbers.forEach(btn => {
+    btn.classList.remove("active");
+    if (parseInt(btn.textContent) === page) {
+      btn.classList.add("active");
+    }
+  });
+
+  prevBtn.disabled = page === 1;
+  nextBtn.disabled = page === totalPages;
+
+  console.log("Current Page:", page);
+
+  // 🔥 Hook point for future:
+  // loadData(page);
+}
+
+// Click page numbers
+pageNumbers.forEach(btn => {
+  btn.addEventListener("click", () => {
+    updatePagination(parseInt(btn.textContent));
+  });
+});
+
+// Next
+if (nextBtn) {
+  nextBtn.addEventListener("click", () => {
+    if (currentPage < totalPages) {
+      updatePagination(currentPage + 1);
+    }
+  });
+}
+
+// Prev
+if (prevBtn) {
+  prevBtn.addEventListener("click", () => {
+    if (currentPage > 1) {
+      updatePagination(currentPage - 1);
+    }
+  });
+}
