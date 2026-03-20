@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #2980b9, #6dd5fa);
+}
+
+/* AUTH BOX */
+.auth-box {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 10px;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.auth-box h2 {
+  margin-bottom: 1.5rem;
+  color: #2980b9;
+}
+
+/* FORM */
+.auth-box form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-box input {
+  margin: 0.5rem 0;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.auth-box button {
+  margin-top: 1rem;
+  padding: 0.7rem;
+  border: none;
+  background: #e67e22;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.auth-box button:hover {
+  background: #d35400;
+}
+
+.auth-box a {
+  display: block;
+  margin-top: 1rem;
+  color: #2980b9;
+  text-decoration: none;
+}
