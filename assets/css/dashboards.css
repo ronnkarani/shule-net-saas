@@ -12,6 +12,11 @@ body {
 }
 
 /* SIDEBAR */
+.layout {
+  display: flex;
+  width: 100%;
+}
+
 .sidebar {
   width: 220px;
   background: #2c3e50;
