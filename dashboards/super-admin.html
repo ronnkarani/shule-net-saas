@@ -3,10 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <title>Dashboard</title>
+<link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 <link rel="stylesheet" href="../assets/css/dashboards.css">
 </head>
 <body>
-    
+
+  <!-- TOP NAVBAR -->
+  <div data-include="../partials/dashboard-navbar.html"></div>
+
+  <!-- MAIN LAYOUT -->
   <div class="layout">
     <div data-include="../partials/sidebar.html"></div>
 
@@ -15,6 +23,9 @@
       <p>Dashboard overview</p>
     </main>
   </div>
+
+  <!-- FOOTER -->
+  <div data-include="../partials/dashboard-footer.html"></div>
 
   <script src="../assets/js/dashboards.js"></script>
 </body>
