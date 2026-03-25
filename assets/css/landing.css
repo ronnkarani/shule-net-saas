@@ -1,4 +1,20 @@
 /* RESET */
+:root {
+  --primary: #4f46e5;
+  --primary-dark: #4338ca;
+  --accent: #22c55e;
+
+  --bg: #0f172a;
+  --card-bg: rgba(255, 255, 255, 0.05);
+
+  --text: #0f172a;
+  --text-light: #64748b;
+
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(0,0,0,0.1);
+  --glass: backdrop-filter: blur(10px);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +23,7 @@
 }
 
 body {
-  background: #f9f9f9;
+  background: linear-gradient(180deg, #f8fafc, #eef2ff);
   color: #333;
   display: flex;
   flex-direction: column;
@@ -22,7 +38,7 @@ body {
   background: #2c3e50;
   padding: 1rem 2rem;
   color: white;
-  position: relative;
+  position: sticky;
 }
 
 .logo {
@@ -136,12 +152,19 @@ i {
   color: #2980b9 !important;
 }
 
+.card,
+.btn,
+.nav-links a {
+  transition: all 0.3s ease;
+}
+
 /* HERO */
 .hero {
   position: relative;
   color: white;
   text-align: center;
-  padding: 5rem 2rem;
+  padding: 6rem 2rem;
+  background: radial-gradient(circle at top, #6366f1, #0f172a);
   overflow: hidden;
 }
 
@@ -159,16 +182,14 @@ i {
 }
 
 .hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #ec701c;
+  font-size: 3rem;
+  font-weight: 800;
 }
 
 .hero p {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  color: #fd7e29;
+  max-width: 600px;
+  margin: 1rem auto;
+  opacity: 0.85;
 }
 
 .hero-buttons {
@@ -183,19 +204,19 @@ i {
 
 /* BUTTON */
 .btn {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.7rem 2rem;
-  background: #e67e22;
+  padding: 0.8rem 1.6rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
   color: white;
-  border-radius: 5px;
-  text-decoration: none;
-  align-items: center;
-  gap: 8px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .btn:hover {
-  background: #d35400;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(79,70,229,0.4);
 }
 
 .highlights-section {
@@ -281,6 +302,11 @@ i {
   text-align: center;
 }
 
+.featured {
+  border: 2px solid var(--primary);
+  transform: scale(1.05);
+}
+
 .grid {
   display: grid;
   gap: 1.5rem;
@@ -289,15 +315,23 @@ i {
 }
 
 .card {
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 1.8rem;
+  transition: 0.3s;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.card i {
+  color: var(--primary);
+  margin-bottom: 1rem;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  transition: 0.3s ease;
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
 .features .card i,
@@ -309,6 +343,27 @@ i {
 /* PAGE SECTION */
 .page {
   padding: 4rem 2rem;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th {
+  background: var(--primary);
+  color: white;
+  padding: 1rem;
+}
+
+td {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
   text-align: center;
 }
 
@@ -712,7 +767,11 @@ form button {
   display: flex;
   gap: 2rem;
   width: max-content;
-  animation: team-scroll 20s linear infinite;
+  animation: scroll 20s linear infinite;
+}
+
+.team-track:hover {
+  animation-play-state: paused;
 }
 
 
@@ -759,7 +818,7 @@ form button {
   }
 
 /* TEAM SCROLL */
-@keyframes team-scroll {
+@keyframes scroll {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
@@ -773,6 +832,7 @@ form button {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
+  padding: 3rem;
 }
 
 .contact-info h2 {
@@ -795,17 +855,17 @@ form button {
 .contact-form-box {
   background: white;
   padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
 .contact-form-box input,
 .contact-form-box textarea {
   width: 100%;
-  margin: 0.5rem 0;
+  margin-bottom: 1rem;
   padding: 0.8rem;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+  border-radius: 8px;
+  border: 1px solid #ddd;
 }
 
 .contact-form-box button {

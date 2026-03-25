@@ -1,42 +1,53 @@
-document.addEventListener("DOMContentLoaded", ()=>{
+document.addEventListener("DOMContentLoaded", () => {
 
-  document.querySelectorAll("[data-include]").forEach(el=>{
+  document.querySelectorAll("[data-include]").forEach(el => {
     fetch(el.dataset.include)
-      .then(res=>{
-        if(!res.ok) throw new Error("Failed to load " + el.dataset.include);
-        return res.text();
-      })
-      .then(data=>{
+      .then(res => res.text())
+      .then(data => {
         el.innerHTML = data;
-        if(el.dataset.include.includes("dashboard-navbar")) initNavbar();
-        if(el.dataset.include.includes("sidebar")) initSidebar();
-      })
-      .catch(err=>console.error(err));
+
+        if (el.dataset.include.includes("dashboard-navbar")) initNavbar();
+        if (el.dataset.include.includes("sidebar")) initSidebar();
+      });
   });
 
 });
 
-// NAVBAR DROPDOWN
+/* NAVBAR */
 function initNavbar(){
   const userMenu = document.getElementById("userMenu");
   const dropdown = document.getElementById("dropdownMenu");
+
   if(!userMenu || !dropdown) return;
 
-  userMenu.addEventListener("click", e=>{
+  userMenu.addEventListener("click", e => {
     e.stopPropagation();
-    dropdown.classList.toggle("show");
+    dropdown.style.display =
+      dropdown.style.display === "block" ? "none" : "block";
   });
-  document.addEventListener("click", ()=>{ dropdown.classList.remove("show"); });
+
+  document.addEventListener("click", () => {
+    dropdown.style.display = "none";
+  });
 }
 
-// SIDEBAR TOGGLE
+/* SIDEBAR */
 function initSidebar(){
   const sidebar = document.getElementById("sidebar");
   const toggleBtn = document.getElementById("toggleSidebar");
-  if(!sidebar) return;
 
-  toggleBtn.addEventListener("click", ()=>{ sidebar.classList.toggle("collapsed"); });
+  if(!sidebar || !toggleBtn) return;
 
-  // Optional: double click anywhere to toggle
-  sidebar.addEventListener("dblclick", ()=>{ sidebar.classList.toggle("collapsed"); });
+  toggleBtn.addEventListener("click", () => {
+    sidebar.classList.toggle("collapsed");
+
+    // SAVE STATE
+    localStorage.setItem("sidebarCollapsed",
+      sidebar.classList.contains("collapsed"));
+  });
+
+  // LOAD STATE
+  if(localStorage.getItem("sidebarCollapsed") === "true"){
+    sidebar.classList.add("collapsed");
+  }
 }

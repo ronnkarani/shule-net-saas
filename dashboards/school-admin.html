@@ -1,30 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Dashboard</title>
+<title>Super Admin Dashboard</title>
+
+<!-- Font Awesome -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
 <link rel="stylesheet" href="../assets/css/dashboards.css">
 </head>
 
 <body>
 
-  <!-- TOP NAVBAR -->
-  <div data-include="../partials/dashboard-navbar.html"></div>
+<!-- NAVBAR -->
+<div data-include="../partials/dashboard-navbar.html"></div>
 
-  <!-- MAIN LAYOUT -->
+<!-- MAIN LAYOUT -->
+<div class="layout-wrapper">
   <div class="layout">
     <div data-include="../partials/sidebar.html"></div>
 
     <main>
       <h1>School Admin</h1>
       <p>Dashboard overview</p>
+
+      <div class="dashboard-cards">
+        <div class="card">Total Teachers: 25</div>
+        <div class="card">Total Students: 12,450</div>
+        <div class="card">Revenue: KES 4.2M</div>
+      </div>
     </main>
   </div>
+</div>
 
-  <!-- FOOTER -->
-  <div data-include="../partials/dashboard-footer.html"></div>
+<!-- FOOTER -->
+<div data-include="../partials/dashboard-footer.html"></div>
 
-  <script src="../assets/js/dashboards.js"></script>
+<script src="../assets/js/dashboards.js"></script>
 </body>
-
 </html>
